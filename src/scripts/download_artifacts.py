@@ -1,6 +1,6 @@
 import boto3
 import os
-from settings import Settings
+from .settings import Settings
 
 
 def download_artifacts(settings: Settings):
