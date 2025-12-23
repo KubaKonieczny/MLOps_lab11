@@ -3,7 +3,7 @@ import onnxruntime as ort
 from fastapi import FastAPI
 import numpy as np
 from mangum import Mangum
-
+from .api_model import PredictRequest, PredictResponse
 
 app = FastAPI()
 
@@ -16,8 +16,9 @@ SENTIMENT_MAP = {0: "negative", 1: "neutral", 2: "positive"}
 
 
 @app.post("/predict")
-def predict(cleaned_text: str) -> str:
+def predict(request: PredictRequest) -> PredictResponse:
     # tokenize input
+    cleaned_text = request.text
     encoded = tokenizer.encode(cleaned_text)
 
     # prepare numpy arrays for ONNX
@@ -35,6 +36,6 @@ def predict(cleaned_text: str) -> str:
 
     label = SENTIMENT_MAP.get(prediction[0], "unknown") # return this label as response
 
-    return label
+    return PredictResponse(prediction=label)
 
 handler = Mangum(app)

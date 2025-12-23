@@ -7,10 +7,23 @@ env:
   ECR_REPOSITORY: sentiment-app-onnx # your ecr repository name
   S3_BUCKET: mlops-lab11-models-jk # your s3 bucket name
 
+on:
+  workflow_dispatch:
+    inputs:
+      steps:
+        description: 'All steps or just integration'
+        required: true
+        type: choice
+        default: 'all'
+        options:
+          - integration
+          - all
+
 
 jobs:
   integration:
     name: checks_and_tests
+    if:  ${{ inputs.steps == 'all' ||  'integration' }}
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code repo
@@ -35,10 +48,13 @@ jobs:
   deployment:
     needs: integration
     runs-on: ubuntu-latest
+    if:  ${{ inputs.steps == 'all' }}
+    #if:  ${{ needs.integration.result == 'success' && inputs.steps == 'all' }}
     steps:
       - name: Checkout code repo
         # This step checks out your repository code so the workflow can access it
         uses: actions/checkout@v4
+
       - name: Configure AWS Credentials
         uses: aws-actions/configure-aws-credentials@v4
         with:
