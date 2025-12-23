@@ -7,7 +7,7 @@ env:
   ECR_REPOSITORY: mlops-lab11-ecr-jk # your ecr repository name
   S3_BUCKET: mlops-lab11-models-jk # your s3 bucket name
   PYTHONPATH: ${{ github.workspace }}
-  
+
 jobs:
   integration:
     name: checks_and_tests
@@ -28,7 +28,7 @@ jobs:
         run: uv run ruff check
       
       - name: Tests
-        run: uv run pytest
+        run: PYTHONPATH=${{ github.workspace }} uv run pytest
 
       # TODO: Add steps for 'ruff check' and 'pytest'
 
@@ -48,10 +48,10 @@ jobs:
         run: uv sync --group deployment
 
       - name: Download models
-        run: uv run main.py --type download
+        run: PYTHONPATH=${{ github.workspace }} uv run main.py --type download
 
       - name: Export models
-        run: uv run main.py --type export
+        run: PYTHONPATH=${{ github.workspace }} uv run main.py --type export
 
       - name: Login to ECR
         id: login-ecr
