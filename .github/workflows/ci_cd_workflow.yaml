@@ -68,7 +68,7 @@ jobs:
       - name: Build and Push Docker image
         env:
           REGISTRY: ${{ steps.login-ecr.outputs.registry }}
-          REPOSITORY: sentiment-app-onnx
+          REPOSITORY: mlops-lab11-ecr-jk
           IMAGE_TAG: ${{ github.sha }}
         run: |
           docker build -t $REPOSITORY:$IMAGE_TAG .
