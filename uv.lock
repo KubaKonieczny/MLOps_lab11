@@ -365,6 +365,7 @@ inference = [
     { name = "uvicorn" },
 ]
 integration = [
+    { name = "fastapi" },
     { name = "numpy" },
     { name = "pytest" },
     { name = "ruff" },
@@ -390,6 +391,7 @@ inference = [
     { name = "uvicorn", specifier = ">=0.40.0" },
 ]
 integration = [
+    { name = "fastapi", specifier = ">=0.127.0" },
     { name = "numpy", specifier = ">=2.4.0" },
     { name = "pytest", specifier = ">=9.0.2" },
     { name = "ruff", specifier = ">=0.14.10" },

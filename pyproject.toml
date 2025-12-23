@@ -25,6 +25,7 @@ inference = [
 ]
 
 integration = [
+    "fastapi>=0.127.0",
     "numpy>=2.4.0",
     "pytest>=9.0.2",
     "ruff>=0.14.10",
