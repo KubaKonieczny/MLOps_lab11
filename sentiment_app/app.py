@@ -3,7 +3,16 @@ import onnxruntime as ort
 from fastapi import FastAPI
 import numpy as np
 from mangum import Mangum
-from .api_model import PredictRequest, PredictResponse
+from pydantic import BaseModel
+
+
+class PredictRequest(BaseModel):
+    text: str
+
+
+class PredictResponse(BaseModel):
+    prediction: str
+
 
 app = FastAPI()
 
