@@ -380,7 +380,13 @@ source = { virtual = "." }
 [package.dev-dependencies]
 deployment = [
     { name = "boto3" },
+    { name = "joblib" },
+    { name = "numpy" },
     { name = "pydantic-settings" },
+    { name = "skl2onnx" },
+    { name = "tokenizers" },
+    { name = "torch" },
+    { name = "transformers" },
 ]
 inference = [
     { name = "awslambdaric" },
@@ -410,7 +416,13 @@ integration = [
 [package.metadata.requires-dev]
 deployment = [
     { name = "boto3", specifier = ">=1.42.14" },
+    { name = "joblib", specifier = ">=1.5.3" },
+    { name = "numpy", specifier = ">=2.4.0" },
     { name = "pydantic-settings", specifier = ">=2.12.0" },
+    { name = "skl2onnx", specifier = ">=1.19.1" },
+    { name = "tokenizers", specifier = ">=0.22.1" },
+    { name = "torch", specifier = ">=2.9.1" },
+    { name = "transformers", specifier = ">=4.57.3" },
 ]
 inference = [
     { name = "awslambdaric", specifier = ">=3.1.1" },
