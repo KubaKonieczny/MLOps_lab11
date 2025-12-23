@@ -402,14 +402,18 @@ inference = [
 integration = [
     { name = "fastapi" },
     { name = "httpx" },
+    { name = "mangum" },
     { name = "numpy" },
     { name = "onnxruntime" },
+    { name = "pydantic" },
+    { name = "pydantic-settings" },
     { name = "pytest" },
     { name = "ruff" },
     { name = "skl2onnx" },
     { name = "tokenizers" },
     { name = "torch" },
     { name = "transformers" },
+    { name = "uvicorn" },
 ]
 
 [package.metadata]
@@ -439,14 +443,18 @@ inference = [
 integration = [
     { name = "fastapi", specifier = ">=0.127.0" },
     { name = "httpx", specifier = ">=0.28.1" },
+    { name = "mangum", specifier = ">=0.19.0" },
     { name = "numpy", specifier = ">=2.4.0" },
     { name = "onnxruntime", specifier = ">=1.23.2" },
+    { name = "pydantic", specifier = ">=2.12.5" },
+    { name = "pydantic-settings", specifier = ">=2.12.0" },
     { name = "pytest", specifier = ">=9.0.2" },
     { name = "ruff", specifier = ">=0.14.10" },
     { name = "skl2onnx", specifier = ">=1.19.1" },
     { name = "tokenizers", specifier = ">=0.22.1" },
     { name = "torch", specifier = ">=2.9.1" },
     { name = "transformers", specifier = ">=4.57.3" },
+    { name = "uvicorn", specifier = ">=0.40.0" },
 ]
 
 [[package]]
