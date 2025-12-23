@@ -6,7 +6,8 @@ env:
   AWS_REGION: us-east-1 # your region
   ECR_REPOSITORY: mlops-lab11-ecr-jk # your ecr repository name
   S3_BUCKET: mlops-lab11-models-jk # your s3 bucket name
-
+  PYTHONPATH: ${{ github.workspace }}
+  
 jobs:
   integration:
     name: checks_and_tests
