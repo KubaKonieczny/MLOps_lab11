@@ -26,6 +26,7 @@ inference = [
 
 integration = [
     "numpy>=2.4.0",
+    "pytest>=9.0.2",
     "ruff>=0.14.10",
     "skl2onnx>=1.19.1",
     "tokenizers>=0.22.1",
