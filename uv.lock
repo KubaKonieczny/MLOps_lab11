@@ -380,6 +380,7 @@ source = { virtual = "." }
 [package.dev-dependencies]
 deployment = [
     { name = "boto3" },
+    { name = "pydantic-settings" },
 ]
 inference = [
     { name = "awslambdaric" },
@@ -407,7 +408,10 @@ integration = [
 [package.metadata]
 
 [package.metadata.requires-dev]
-deployment = [{ name = "boto3", specifier = ">=1.42.14" }]
+deployment = [
+    { name = "boto3", specifier = ">=1.42.14" },
+    { name = "pydantic-settings", specifier = ">=2.12.0" },
+]
 inference = [
     { name = "awslambdaric", specifier = ">=3.1.1" },
     { name = "fastapi", specifier = ">=0.127.0" },
